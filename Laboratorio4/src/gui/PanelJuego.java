@@ -13,7 +13,7 @@ import modelo.JuegoPalabraFija;
 import java.awt.*;
 import javax.swing.*;
 
-public class PanelJuego {
+public class PanelJuego extends JPanel {
     private static final long serialVersionUID = 1L;
  
     private final VentanaPrincipal ventana;
