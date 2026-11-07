@@ -8,6 +8,4 @@ package excepciones;
  *
  * @author XPS 13
  */
-public class PalabraInvalidaException {
-    
-}
+
