@@ -72,7 +72,6 @@ public class GestorSonido{
         double frecuencias[] = efecto.getFrecuencias();
         int duraciones []= efecto.getDuracionesMs();
         ByteArrayOutputStream salida = new ByteArrayOutputStream();
-        
         for (int nota = 0; nota < frecuencias.length; nota++) {
             int muestras=(int)(FRECUENCIA_MUESTREO*duraciones[nota]/1000);
             for (int i = 0; i < muestras; i++) {
