@@ -8,6 +8,18 @@ package modelo;
  *
  * @author XPS 13
  */
-public class Modalidad {
+public enum Modalidad {
+  PALABRA_FIJA("Palabra fija (2 jugadores)"),
+    AL_AZAR("Palabra al azar (1 jugador)");
+
+    private final String texto;
+
+    Modalidad(String texto) {
+        this.texto = texto;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
     
 }

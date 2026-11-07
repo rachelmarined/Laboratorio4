@@ -8,6 +8,10 @@ package modelo;
  *
  * @author XPS 13
  */
-public class EstadoPartida {
+public enum EstadoPartida {
+  EN_CURSO,
+    GANADA,
+    PERDIDA
+
     
 }

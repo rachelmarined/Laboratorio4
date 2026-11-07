@@ -8,6 +8,11 @@ package modelo;
  *
  * @author marlo
  */
+import excepciones.LetraInvalidaException;
+import excepciones.LetraRepetidaException;
+import excepciones.PalabraInvalidaException;
+import excepciones.PartidaTerminadaException;
+import java.util.List;
 public class JuegoAhorcado {
     
 }

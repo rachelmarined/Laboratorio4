@@ -8,6 +8,8 @@ package modelo;
  *
  * @author XPS 13
  */
-public class ResultadoLetra {
+public enum ResultadoLetra {
+  ACIERTO,
+    ERROR
     
 }
