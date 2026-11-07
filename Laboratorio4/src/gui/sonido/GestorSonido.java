@@ -68,5 +68,21 @@ public class GestorSonido{
             SwingUtilities.invokeLater(accion);
         }
     }
-
+    private byte[] generarPcm(EfectoSonido efecto) {
+        double frecuencias[] = efecto.getFrecuencias();
+        int duraciones []= efecto.getDuracionesMs();
+        ByteArrayOutputStream salida = new ByteArrayOutputStream();
+        
+        for (int nota = 0; nota < frecuencias.length; nota++) {
+            int muestras=(int)(FRECUENCIA_MUESTREO*duraciones[nota]/1000);
+            for (int i = 0; i < muestras; i++) {
+                double envolvente= Math.min(1.0,Math.min(i, muestras-i)/(double)MUESTRAS_SUAVIZADO);
+                double onda =frecuencias[nota] <= 0 ? 0 : Math.sin(2*Math.PI* frecuencias[nota] *i/FRECUENCIA_MUESTREO);
+                short valor=(short)(onda*envolvente*AMPLITUD);
+                salida.write(valor & 0xFF);       
+                salida.write((valor >> 8) & 0xFF); 
+            }
+        }
+        return salida.toByteArray();
+    }
 }
