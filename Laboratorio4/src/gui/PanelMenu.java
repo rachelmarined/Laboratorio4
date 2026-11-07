@@ -73,20 +73,19 @@ public class PanelMenu extends JPanel{
         String palabra = DialogoPalabra.pedir(this);
         if (palabra == null) {
             return; // el jugador canceló
-    }
-    try {
-        JuegoAhorcado juego = new JuegoPalabraFija(palabra);
+        }
+        try {
+            JuegoAhorcado juego = new JuegoPalabraFija(palabra);
         lblMensaje.setText(" ");
-        ventana.mostrarJuego(juego);
-    } 
-    catch (PalabraInvalidaException ex) {
-        lblMensaje.setText(ex.getMessage());
-        sonido.reproducir(EfectoSonido.ALERTA);
+            ventana.mostrarJuego(juego);
+        } catch (PalabraInvalidaException ex) {
+            lblMensaje.setText(ex.getMessage());
+            sonido.reproducir(EfectoSonido.ALERTA);
+        }
     }
- }
     private void iniciarAlAzar() {
         try {
-            JuegoAhorcado juego = new JugadorAlAzar(administrador);
+            JuegoAhorcado juego = new JuegoAlAzar(administrador);
             lblMensaje.setText(" ");
             ventana.mostrarJuego(juego);
         }
