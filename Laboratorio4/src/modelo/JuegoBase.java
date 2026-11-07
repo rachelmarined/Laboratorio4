@@ -129,4 +129,12 @@ public abstract class JuegoBase implements JuegoAhorcado, Serializable{
     public EtapaAhorcado getEtapa(){
         return etapa;
     }
+    @Override
+    public EstadoPartida getEstado(){
+        return estado;
+    }
+    @Override
+    public String getPalabraSecreta(){
+        return palabraSecreta;
+    }
 }
